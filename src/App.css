@@ -1,0 +1,286 @@
+.App {
+  min-height: 100vh;
+  padding-top: 55px;
+
+  background:
+    radial-gradient(circle at top left, #e5eee5 0%, transparent 35%),
+    radial-gradient(circle at bottom right, #e8dfcf 0%, transparent 35%),
+    linear-gradient(135deg, #f6f1e7 0%, #eee8dc 100%);
+
+  text-align: center;
+  color: #26352c;
+}
+
+/* Title */
+
+.Header {
+  display: inline-block;
+
+  margin-bottom: 28px;
+  padding: 0 8px 9px;
+
+  color: #26352c;
+
+  font-size: 1.55rem;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+
+  border-bottom: 3px solid #8da995;
+}
+
+/* Calculator */
+
+.Calculator {
+  width: 520px;
+  margin: 0 auto;
+  padding: 22px;
+
+  background-color: rgba(250, 248, 241, 0.96);
+
+  border: 2px solid #9ab4a0;
+  border-radius: 14px;
+
+  box-shadow:
+    0 12px 30px rgba(62, 82, 67, 0.12),
+    0 3px 8px rgba(62, 82, 67, 0.08);
+}
+
+/* Display */
+
+.Display {
+  height: 86px;
+  padding: 12px 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  background: linear-gradient(145deg, #526f5d, #466251);
+  color: #fffaf0;
+
+  border: 2px solid #3e5747;
+  border-radius: 9px;
+
+  box-shadow:
+    inset 0 2px 5px rgba(0, 0, 0, 0.14),
+    0 3px 8px rgba(55, 75, 61, 0.14);
+
+  font-size: 2.5rem;
+  font-weight: 500;
+
+  text-align: right;
+  overflow: hidden;
+}
+
+/* Keypad */
+
+.Keypad {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+
+  margin-top: 17px;
+}
+
+/* All Buttons */
+
+.Button {
+  height: 66px;
+
+  border: 1px solid #c9d3c8;
+  border-radius: 7px;
+
+  background: linear-gradient(145deg, #faf6ed, #eee8dc);
+  color: #26352c;
+
+  box-shadow:
+    0 3px 6px rgba(67, 83, 70, 0.08);
+
+  font-size: 1.5rem;
+  font-weight: 500;
+
+  transition:
+    transform 0.12s ease,
+    background 0.15s ease,
+    border-color 0.15s ease,
+    box-shadow 0.15s ease;
+}
+
+/* Number button hover */
+
+.Button:hover {
+  background: linear-gradient(145deg, #f4efe5, #e7e0d4);
+
+  border-color: #aebfaf;
+
+  box-shadow:
+    0 5px 10px rgba(67, 83, 70, 0.12);
+
+  transform: translateY(-2px);
+}
+
+/* Number button press */
+
+.Button:active {
+  background: #e1dbcf;
+
+  box-shadow:
+    0 2px 4px rgba(67, 83, 70, 0.1);
+
+  transform: translateY(1px);
+}
+
+/* Operators */
+
+.OperatorButton {
+  background: linear-gradient(145deg, #e7efe5, #dce7db);
+
+  border-color: #b8cbb9;
+
+  color: #344d3b;
+  font-weight: 600;
+}
+
+.OperatorButton:hover {
+  background: linear-gradient(145deg, #dce8db, #cfddcf);
+
+  border-color: #9fb6a2;
+
+  box-shadow:
+    0 5px 10px rgba(72, 97, 77, 0.14);
+
+  transform: translateY(-2px);
+}
+
+.OperatorButton:active {
+  background: #c7d6c8;
+
+  transform: translateY(1px);
+}
+
+/* Clear Button */
+
+.ClearButton {
+  background: linear-gradient(145deg, #d9e5d8, #cbdacb);
+
+  border-color: #aec3b0;
+
+  color: #344d3b;
+
+  font-weight: 600;
+}
+
+.ClearButton:hover {
+  background: linear-gradient(145deg, #cfdfcf, #c0d2c1);
+
+  border-color: #9fb7a1;
+
+  box-shadow:
+    0 5px 10px rgba(72, 97, 77, 0.14);
+
+  transform: translateY(-2px);
+}
+
+.ClearButton:active {
+  background: #b9cdbb;
+
+  transform: translateY(1px);
+}
+
+/* Equals Button */
+
+.EqualsButton {
+  background: linear-gradient(145deg, #83a58b, #71957a);
+
+  border-color: #688a70;
+
+  color: #fffaf0;
+
+  font-weight: 700;
+
+  box-shadow:
+    0 4px 8px rgba(68, 94, 73, 0.18);
+}
+
+.EqualsButton:hover {
+  background: linear-gradient(145deg, #789d81, #668d70);
+
+  border-color: #5d8065;
+
+  box-shadow:
+    0 6px 12px rgba(68, 94, 73, 0.22);
+
+  transform: translateY(-2px);
+}
+
+.EqualsButton:active {
+  background: #5f8067;
+
+  box-shadow:
+    0 2px 5px rgba(68, 94, 73, 0.18);
+
+  transform: translateY(1px);
+}
+
+/* Full Width Ocampo Button */
+
+.OcampoButton {
+  grid-column: span 4;
+
+  background: linear-gradient(145deg, #d9e5d8, #cbdacb);
+
+  border-color: #aec3b0;
+
+  color: #344d3b;
+
+  font-weight: 600;
+}
+
+.OcampoButton:hover {
+  background: linear-gradient(145deg, #cfdfcf, #c0d2c1);
+
+  border-color: #9fb7a1;
+
+  box-shadow:
+    0 5px 10px rgba(72, 97, 77, 0.14);
+
+  transform: translateY(-2px);
+}
+
+.OcampoButton:active {
+  background: #b9cdbb;
+
+  transform: translateY(1px);
+}
+
+/* Smaller screens */
+
+@media (max-width: 600px) {
+  .App {
+    padding: 35px 15px;
+  }
+
+  .Header {
+    font-size: 1.2rem;
+  }
+
+  .Calculator {
+    width: 100%;
+    max-width: 520px;
+    padding: 16px;
+  }
+
+  .Display {
+    height: 76px;
+    font-size: 2rem;
+  }
+
+  .Button {
+    height: 58px;
+    font-size: 1.3rem;
+  }
+
+  .Keypad {
+    gap: 9px;
+  }
+}
