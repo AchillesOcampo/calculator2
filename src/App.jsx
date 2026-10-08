@@ -49,14 +49,15 @@ function App() {
       return;
     }
 
-    // 3. Operator keys (+, -, x, ÷)
+    // 3. Operator keys (+, -, x, ÷) -> Show operator on screen
     if (['+', '-', 'x', '÷'].includes(value)) {
       setOperator(value);
+      setDisplayValue(value); // Display the pressed operator
       setShouldReset(false);
       return;
     }
 
-    // 4. Equals key (=)
+    // 4. Equals key (=) -> Calculate and set shouldReset flag
     if (value === '=') {
       if (operand1 !== null && operand2 !== null && operator !== null) {
         let result = 0;
@@ -76,7 +77,7 @@ function App() {
         setOperand1(formattedResult);
         setOperand2(null);
         setOperator(null);
-        setShouldReset(true); // Signal that the next digit click starts a brand new operation
+        setShouldReset(true); // Ensures next number replaces this result
       }
       return;
     }
@@ -87,7 +88,7 @@ function App() {
       if (operand1 === null || shouldReset) {
         setOperand1(value);
         setDisplayValue(value);
-        setShouldReset(false);
+        setShouldReset(false); // Reset complete, continue typing normally
       } else {
         const stackedValue = operand1 + value;
         setOperand1(stackedValue);
